@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+vector<ll>v;
+ 
+int main()
+{
+ll n;
+cin>>n;
+for(ll i=0;i<n;i++)
+{
+    ll x,y;
+    cin>>x>>y;
+    ll z=x+y;
+ 
+    v.push_back(z);
+}
+ 
+sort(v.begin(),v.end());
+cout<<v.back()<<endl;
+return 0;
+ 
+}
