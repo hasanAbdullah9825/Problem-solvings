@@ -1,0 +1,16 @@
+
+BlogPost::has('comments')->get()//comment আছে এমন Post গুলি।
+$post= BlogPost::has('comments','>=',2)->get();//এমন post যাদের  অন্তত ২টি comment আছে।
+$posts=BlogPost::whereHas('comments',function($query){$query->where('content','like','%abc%');})->get() //abc  আছে এমন comment.
+
+
+
+
+BlogPost::doesntHave('comments')->get();// comment নাই এমন post।
+
+$posts=BlogPost::whereDoesntHave('comments',function($query){$query->where('content','like','%abc%');})->get()//abc নাই এমন comment.
+
+
+
+$post=BlogPost::withCount('comments')->get();// কোন post এর কত টি কমেন্ট।
+
